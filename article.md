@@ -59,7 +59,7 @@ My mother wouldn't let me touch a soldering iron, fearing I might start a fire t
 
 Once, as a university student, while learning nano-plating from a teaching assistant (high school graduate), he grew frustrated with my clumsiness. "How can a college student not do even such an easy way?" he scolded loudly. "The quality of students has gone down. Haven't your father ever taught you anything?" Flushed with a bit of defiance, I shot back, "I’m sorry, but yes, as you said, I don't have a father." After that, he stopped teaching me altogether. I don't think he was a bad person; it was just that, in those days, the world often abandoned children who didn't perform well immediately. That's just how 'adults' were in that era. Of course, I know my retort was poorly childish, too.
 
-But it’s okay, no problem, it doesn’t matter anymore. I hold no grudges against anyone. I had my grandmother, who raised me up until I grew bigger than a house, and I have my mother, who nurtured my ability to put my experiences into words like this. My life has been more than luxurious enough.
+But it’s okay, no problem, it doesn’t matter anymore. I hold no grudges against anyone. I learned from my father, even before I was born, that hating someone won't change anything, regardless of how he taught it. I had my grandmother, who raised me up until I grew bigger than a house, and I have my mother, who nurtured my ability to put my experiences into words like this. My life has been more than luxurious enough.
 
 Just recently, I had to help my daughter with her junior high school homework involving soldering. After explaining how to use the tool as carefully as I could, (it might have become too-much safely, but) she moved her own hands and succeeded.
 
