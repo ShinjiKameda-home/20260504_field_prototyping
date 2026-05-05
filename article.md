@@ -19,24 +19,31 @@ This guide focuses on two essential pillars for field deployment, explained simp
 ![images/schematic]("Schematic diagram")
 
 ## 1. Region-free Off-grid Immortal Power Solutions
-To keep the Raspberry Pi Pico 2W connected to the Wi-Fi and allow my HomeServer to send real-time commands—such as making the Haniwa’s eyes flash—we must first understand the power consumption of the Wi-Fi chip (CYW43). While transmitting data naturally consumes significant power, we can save energy by putting the chip into a "doze" state where it only listens for incoming packets.Even in this power-saving mode, the system will continuously consume approximately ~20mA. If we connect it to a mobile battery with an effective capacity of 3,000mAh, the system is calculated to last for ~6days.
-
+To keep the Raspberry Pi Pico 2W connected to the Wi-Fi and allow my HomeServer to send real-time commands—such as making the Haniwa’s eyes flash—we must first understand the power consumption of the Wi-Fi chip (CYW43). While transmitting data naturally consumes significant power, we can save energy by putting the chip into a "doze" state where it only listens for incoming packets. Even in this power-saving mode, the system will continuously consume approximately ~20mA. If we connect it to a mobile battery with an effective capacity of 3,000mAh, the system is calculated to last for ~6days.
+$$3000[mAh] / 20[mA] /24 [h/d] = 6.25[d]$$
 ``` c++
     cyw43_arch_enable_sta_mode();
     cyw43_wifi_pm(&cyw43_state,
         cyw43_pm_value(CYW43_PM2_POWERSAVE_MODE, 200, 1, 1, 5));
     watchdog_update();
 ```
-
 If we have even one sunny day during that 6-day period, we can keep the cycle going. Given a solar input of
-$$3W / 5V = 0.6A$$
-just 5 hours of warm sunlight should be enough to fully recharge the 3,000 mAh battery. With this setup, even if I were to pass away decades from now, this system would continue to draw breath, tirelessly supplying power to the Pico 2W.The Legacy Battery and the Pass-through TestI searched through my storage and found an old friend: a 6,700 mAh mobile battery made by a Japanese manufacturer many years ago.
+$$3[W] / 5[V] * 1000 = 600[mA]$$
+just 5 hours of warm sunlight should be enough to fully recharge the 3,000[mAh] battery. With this setup, even if I were to pass away decades from now, this system would continue to draw breath, tirelessly supplying power to the Pico 2W. The Legacy Battery and the Pass-through TestI searched through my storage and found an old friend: a 6,700[mAh] mobile battery made by a Japanese manufacturer a many years ago.
 
-It’s nearly a decade old and long discontinued, so it’s safer to assume its actual capacity has dropped to about half. Still, by my calculations, it should provide at least 3,000 mAh. Let’s put it to work.The first thing to check was whether this battery supports "pass-through" charging—the ability to provide power to a device while simultaneously being charged itself. 
+[image]("An old mobile battery gets a chance to a new place.")
 
-To test this, I used a DIY bedside lamp I had previously made by stuffing an LED string light into a small wine bottle. I bought this bottle at a hotel during my very first business trip abroad—a memory I still cherish. I connected the battery to a wall outlet via USB micro-B and plugged the LED string into the battery’s USB Type-A port.
+It’s nearly a decade old (2018 on sale) and long discontinued, so it’s safer to assume its actual capacity has dropped to about half. Still, it might provide at least 3,000[mAh]. Let’s put it to work. The first thing to check was whether this battery supports "pass-through" charging—the ability to provide power to a device while simultaneously being charged itself. 
 
-The wine bottle emitted a gentle, steady glow. Success. It was time to bring this ancient battery into my latest project.Selecting the Solar PanelTo fully charge a 3,000 mAh battery in 5 hours at a standard USB voltage of 5V, I needed a solar panel with a generating capacity of at least 3W. I decided on a 3.5W panel. It’s a modest setup, but it feels just right for this project.
+To test this, I used a DIY bedside lamp I had previously made by stuffing an LED string light into a small wine bottle. I bought this bottle at a hotel during my very first business trip abroad — a memory I still cherish. I connected the battery to a wall outlet via USB micro-B and plugged the LED string into the battery’s USB Type-A port.
+
+[image]("The battery pass-through tester at my bedside")
+
+The wine bottle emitted a gentle, steady glow. Success. It was time to bring this ancient battery into my latest project. Selecting the Solar Panel to charge a 3,000[mAh] battery in 5[hours] at a standard USB voltage of 5[V], I needed a solar panel with a generating capacity of at least 3[W]. I decided on a 3.5[W] panel made for security cameras used outside of many houses. It’s a modest setup, but it feels just right for this project.
+
+[image]("The sunshine harvester can provide 3.5[W]")
+
+With that, the selection of power supply components and basic testing are complete. Next up is waterproofing the circuit. My hands are shaking with fear of damaging something important, but I'll give it a try.
 
 ## 2. Practical Field Waterproof Protection
 - Using simple plastic cases, diatomaceous earth rings and my DIY techniques to shield circuitry from rain and salt-laden sea breezes.
