@@ -30,11 +30,10 @@ This guide focuses on two essential pillars for field deployment, explained simp
 ## Conclusions
 This project is dedicated to my grandmother, who passed away last winter.
 
-I have been clumsy with my hands since I was a child, and even now as an adult, I struggle with soldering.
-This might sound like an excuse, but the truth is, I never knew my father. I was told that he left home for someone else while I was still in my mother’s womb. Some of the hand tools I still own today—water pump pliers, screwdriver sets, box wrenches—were left behind by him. But I was never taught how to use them.
+I have been clumsy with my hands since I was a child, and even now as an adult, I struggle with soldering. This might sound like an excuse, but the truth is, I never knew my father. I was told that he left home for someone else while I was still in my mother’s womb. Some of the hand tools I still own today — water pump pliers, screwdriver sets, box wrenches — were left behind by him, but I was never taught how to use them from him.
 
 My mother wouldn't let me touch a soldering iron, fearing I might start a fire to our house, so I only bought one for myself after becoming an adult.
-Everything, I, as a young boy, had to learn by doing. I moved forward through countless injuries and by breaking many things. And even now, I am almost too afraid to touch something feeling precious in it.
+Everything, I, as a young boy, had to learn by doing. I moved forward through countless injuries and by breaking many things. And even now, I am almost too afraid to break it down when I have to touch something letting me feel precious.
 
 Once, as a university student, while learning micro-plating from a professor, he grew frustrated with my clumsiness. "How can a college student not do this?" he scolded. "Quality of students have gotten down. Didn't your father teach you anything?" Flushed with a bit of defiance, I shot back, "I’m sorry, but as you said, I don't have a father." After that, the professor stopped teaching me altogether. To me, that was just how "adults" usually were. Of course, I know I was too young back then, too.
 
