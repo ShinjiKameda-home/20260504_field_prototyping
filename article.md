@@ -3,20 +3,20 @@
 ## Motivation: Engineering with the Seasons in Hayama
 Living in Hayama on the Miura Peninsula of the Japanese archipelago, I am constantly reminded of the beauty and power of the seasons.
 
-The incredibly warm winter sunlight that softens the harsh winds, the fierce spring gales that sweep through the coast (reminding me of the "MISTRAL" from a famous anime I watched in my schooldays), the cooling sea breeze of summer carrying the scent of the tide, and the ginkgo trees dancing in the autumn wind, each turning yellow at its own unique pace. I feel a deep sense of gratitude to live in an environment where nature's presence is so profoundly felt.
+The incredibly warm winter sunlight that softens the harsh winds, the fierce spring gales that sweep through the coast, the cooling sea breeze of summer carrying the scent of the tide, and the ginkgo trees dancing in the autumn wind, each turning yellow at its own unique pace. I feel a deep sense of gratitude to live in an environment where nature's presence is so profoundly felt.
 
-For me, the wind — whenever and wherever it blows — traces back to my childhood. Every night before bed, I loved listening to the rustling of leaves in the night breeze. It was the sound by a large poplar tree planted by my grandmother to commemorate my birth. In Japan, the poplar trees of Biei Town in Hokkaido are famous. (https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%97%E3%83%A9) If you felt something strange, your instincts are correct. As you know, the poplar becomes too big to be in a small residential area in Japan. My mother have never said that, however, I'm thinking she perhaps knew it but deliberately chose it.
+For me, the wind — whenever and wherever it blows — traces back to my childhood. Every night before bed, I loved listening to the rustling of leaves in the night breeze. It was the sound by a large poplar tree planted by my grandmother to commemorate my birth. In Japan, the poplar trees of Biei Town in Hokkaido are famous. (https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%97%E3%83%A9) If you felt something strange, your instincts are correct. As you know, the poplar becomes too big to be in a small residential area in Japan. My mother never said so, however, I'm thinking she perhaps knew it but deliberately chose it.
 
-Because, my grandmother was a resilient woman who met my grandfather at "Manchuria", a land stretching to the horizon endlessly in Northeast China, during WWII. Just after the war (yes, the war should have ended), she was a rare surviver who escaped the overwhelming Soviet persistent offensive robbing and narrowly returned to Japan. In our small but safe residential area in Southern Osaka Prefecture, that poplar grew unnaturally tall, surpassing our living house by the time I was 17. Because it became a lightning hazard, we eventually had to cut it down.
+Because, my grandmother was a resilient woman who met my grandfather at "Manchuria", a land stretching to the horizon endlessly in Northeast China, during WWII. Just after the war (yes, the war should have ended), she was a rare survivor who escaped the overwhelming Soviet persistent offensive robbing and narrowly returned to Japan. In our small but safe residential area in Southern Osaka Prefecture, that poplar grew unnaturally tall, surpassing our living house by the time I was 17. Because it became a lightning hazard, we eventually had to cut it down.
 
 Though the tree is gone, the "SARI-SARI" sound of its leaves remains etched in my heart — no, I should say — it shaped my heart. Today, as I face the fierce gales of Hayama, I find myself still trying to capture and understand what the sound of the wind means through my engineering.
 
-This project is a humble attempt to harmonize technology with these natural elements. My goal is to ensure that my prototypes can continue to survive even after my dead and function as guardians within the same environment I call my new quiet safe area like "Laputa".
+This project is a humble attempt to harmonize technology with these natural elements. My goal is to ensure that my prototypes can continue to survive even long after I am gone and function as guardians within the same environment I call my  place of peace and security.
 
 ## Project Scope
-This guide focuses on two essential pillars for field deployment, explained simply for region-free beginners using common hand tools and cost-effective materials.
+This guide focuses on two essential pillars for field deployment, explained simply for the world-wide DIY beginners using common hand tools and cost-effective materials.
 
-![images/schematic]("Schematic diagram")
+![Schematic diagram of off-grid power and waterproof enclosures](images/Schematic.jpg "Schematic diagram of off-grid power and waterproof enclosures")
 
 ## 1. Region-free Off-grid Immortal Power Solutions
 To keep the Raspberry Pi Pico 2W connected to the Wi-Fi and allow my HomeServer to send real-time commands—such as making the Haniwa’s eyes flash—we must first understand the power consumption of the Wi-Fi chip (CYW43). While transmitting data naturally consumes significant power, we can save energy by putting the chip into a "doze" state where it only listens for incoming packets. Even in this power-saving mode, the system will continuously consume approximately ~20mA. If we connect it to a mobile battery with an effective capacity of 3,000mAh, the system is calculated to last for ~6days.
@@ -37,16 +37,14 @@ It’s nearly a decade old (2018 on sale) and long discontinued, so it’s safer
 
 To test this, I used a DIY bedside lamp I had previously made by stuffing an LED string light into a small wine bottle. I bought this bottle at a hotel during my very first business trip abroad — a memory I still cherish. I connected the battery to a wall outlet via USB micro-B and plugged the LED string into the battery’s USB Type-A port.
 
-![The pass-through function confirmed with German bottle and Japanese battery.](images/20260505_pass-through_confirmed.jpg "The pass-through function confirmed with German bottle and Japanese battery.")
+![The pass-through function confirmed with German wine bottle and Japanese energy battery.](images/20260505_pass-through_confirmed.jpg "The pass-through function confirmed with German wine bottle and Japanese energy battery.")
 ![An LED string.](images/20260505_LED_string.jpg "An LED string.")
 ![A small wine bottle.](images/20260505_small_wine_bottle.jpg "A small wine bottle.")
 ![The battery pass-through tester at my bedside.](images/20260505_pass-through_tester.jpg "The battery pass-through tester at my bedside.")
 
 The wine bottle emitted a gentle, steady glow. Success. It was time to bring this ancient battery into my latest project. Selecting the Solar Panel to charge a 3,000[mAh] battery in 5[hours] at a standard USB voltage of 5[V], I needed a solar panel with a generating capacity of at least 3[W]. I decided on a 3.5[W] panel made for security cameras used outside of many houses. It’s a modest setup, but it feels just right for this project.
 
-![The sunshine harvester can provide 3.5[W].](images/20260507_solar_panel.jpg "The sunshine harvester can provide 3.5[W].")
-
-
+![The sunshine harvester can provide 3.5[W] to micro USB made in China.](images/20260507_solar_panel.jpg "The sunshine harvester can provide 3.5[W] to micro USB made in China.")
 
 With that, the selection of power supply components and basic testing are complete. Next up is waterproofing the circuit. My hands are shaking with fear of damaging something important, but I'll give it a try tomorrow morning, good night...
 
@@ -70,15 +68,79 @@ Like this:
     );
     // Always feed your guard dog after a long period of work.
     watchdog_update();
+    // If you absolutely need them to sleep for more than 8 seconds, 
+    // you can use a for loop.
+    for (int i = 0; i < 10; i++) {
+        sleep_ms(1000);
+        watchdog_update(); // Do not forget feeding
+    }
 ```
 
-
 ## 2. Practical Field Waterproof Protection
-- Using simple plastic cases, diatomaceous earth rings and my DIY techniques to shield circuitry from rain and salt-laden sea breezes.
-- Using a Ethernet cable as 4 twisted pairs for noise-robust signal transferring.
+**The Ethernet Bridge: Repurposing Household Surplus for Noise-Resistant Signal Transfer**
+When you move to a new house or switch internet service providers (ISPs), you often find yourself with extra Ethernet cables — those "leftovers" from FTTH gateway router rentals that tend to pile up in a drawer. In this project, we’ll put one of those dormant cables to work as a reliable bridge between our main waterproof enclosure and the satellite plastic box.
 
-## 3. Result: Haniwa Flashed in my Garden
+**Why Ethernet?**
+I’ll be honest: I’m not skilled enough to solder wires directly onto those tiny RJ45 pins. However, using RJ45 breakout boards solves this perfectly. As you know, an Ethernet cable consists of eight internal wires organized into four twisted pairs. This structure is inherently robust against external electromagnetic noise, even over long-distance transmissions across a garden.
+
+**Implementation Strategy:**
+To build this bridge, I used two different types of breakout boards:
+
+On the main side: A board with a standard 2.54mm pitch header that plugs directly into my breadboard alongside the Pi Pico 2W.
+
+On the satellite side: A board with screw terminals, allowing me to securely fasten jumper wires for the RGB LEDs and the soil moisture sensor without worrying about them vibrating loose in the wind.
+
+**Verification with a Multimeter:**
+Before closing the boxes, I used a multimeter in resistance mode to map the pinouts. Since some breakout boards can be confusing, it’s essential to confirm continuity between the breadboard pins and the screw terminals. In my case, as shown in the photo, the pinout was mirrored: Pin 1 on the far-right of the connector corresponded to the far-left screw terminal.
+
+![Ethernet cable and tester. There is no continuity between the leftmost and leftmost ends.](images/20260508_left_left.jpg "Ethernet cable and tester. There is no continuity between the leftmost and leftmost ends.")
+![Wires were placed like a mirror, the tester needle tilted sharply to the right, confirming continuity.](images/20260508_mirror.jpg "Wires were placed like a mirror, the tester needle tilted sharply to the right, confirming continuity.")
+
+**One Critical Warning: Straight vs. Crossover**
+While rare nowadays, "Crossover" Ethernet cables still exist in the wild. Unlike standard "Straight-through" cables, the internal pairs in a crossover cable are swapped.
+
+I strongly recommend using a standard Straight-through cable. If you must use a crossover cable, be extremely careful; you will need to re-verify every single pin with a tester and adjust your component wiring accordingly. One wrong connection here, and your sensors are gone!
+
+**Switching to Common Anode: Embracing "Active Low" Logic**
+In this step, I made a small but significant change to the circuit: switching from a Common Cathode to a Common Anode RGB LED to use simple one LED. While it might seem counter-intuitive at first for mechanicla engineers such as me, understanding this is a vital "rite of passage" for any electronics hobbyist.
+
+**The Wiring Change:**
+Instead of connecting the longest pin (Common) to GND (Pin18), I connected it to the 3.3V pin (Pin36) of the Pi Pico 2W. The Red, Green, and Blue pins are still connected to the GPIOs via resistors.
+
+**What is "Active Low"?**
+With this setup, the logic is reversed. This is known as Active Low:
+Write 0 (LOW): The GPIO sinks the current, and the LED turns ON.
+Write 1 (HIGH): There is no voltage difference, and the LED turns OFF.
+Many professional microcontrollers and industrial sensors prefer this "sinking" method because it is often more electrically stable and efficient. In my code, I simply initialized the pins to 1 to keep them off at startup.
+
+The code modification is simple: in haniwa_monitor.cpp, simply reverse the off 0 and on 1 signals, changing off 1 to on 0. Since haniwa_main.cpp is already set up as the command center, haniwa_connector.cpp handles communication only, and haniwa_monitor handles how the various sensors operate, you only need to edit haniwa_monitor.
+
+``` c++
+void turn_off_all_leds(void) {
+    gpio_put(LED_RED, 1);    // 1. HIGH means turn off LED
+    gpio_put(LED_GREEN, 1);  // 1. HIGH means turn off LED
+    gpio_put(LED_BLUE, 1);　 // 1. HIGH means turn off LED
+}
+```
+
+Take a look at the movie below — seeing the RGB colors shine with "reversed" logic felt like a celebration! Sorry, but I was so excited. It's fun to get into a new sense of things. Please be careful not to get motion sickness while watching, my hands are shaking as I hold the camera, indicating I'm just so happy.
+
+![The anode-common RGB LED gently blinked, celebrating our colorful era](images/20260509_RGB_LED "The anode-common RGB LED gently blinked, celebrating our colorful era")
+
+
+---
+---
+
+### ---------------------TBC-------------------------
+
+- Using simple plastic cases, diatomaceous earth rings and my DIY techniques to shield circuitry from rain and salt-laden sea breezes.
+
+## 3. Result: Haniwa Flash in my Garden
 - With a movie, when I come to the garden haniwa flashes its LEDs.
+
+### ---------------------TBC-------------------------
+---
+---
 
 ## Conclusions
 This project is dedicated to my grandmother, who passed away last winter.
@@ -91,7 +153,7 @@ I remember a moment from my university days while learning nano-plating. The tea
 
 It was the same as always; with a forced, awkward smile, I said, "I’m sorry, but I don't have a father, as you know, right?"
 
-After that, he fell silent and stopped teaching me altogether. I never thought simply he was a bad person; it was an era where adults usually abandoned children who didn't perform well. Looking back, my retort was childish, too.
+After that, he fell silent and stopped teaching me altogether. I never thought simply he was a bad person; it was an era where adults usually left behind children who didn't perform well. Looking back, my retort was childish, too.
 
 But it’s okay, no problem, I hold no grudges. Even before I was born, I think my father taught me just one thing that hating someone changes nothing. I had my grandmother, who raised me up to be bigger than a house, and I have my mother, who nurtured my ability to put experiences into words like these. My childhood was more than luxurious enough.
 
@@ -99,7 +161,7 @@ Just recently, I helped my daughter with her junior high school homework involvi
 
 In this era of rapidly advancing AI, we cannot survive by simply passing on what we were taught. Sometimes, we must find a way to teach the new things we discovered ourselves — the things no adult ever told us.
 
-However, perhaps — and I want to send a message of encouragement to all the highly-educated, white-collar workers who, like myself, may feel on the brink of despair jobs were taken by AI — it is only in such a changing world that we can truly discover and express our unique skills and individual personalities. Let’s continue to play this adventure game called life.
+However, perhaps — and I want to send a message of encouragement to all the highly-educated, white-collar workers who, like myself, may feel on the brink of despair jobs were taken by AI — it is only in such a real changing world that we get a chance to truly discover and express our unique skills and individual personalities uninterrupted by anyone's shallow words. Let’s continue to play this adventure game called the life.
 
 With deepest gratitude to my grandmother, who survived the bitter, dry cold of the continent and is now reading this from heaven.
 
