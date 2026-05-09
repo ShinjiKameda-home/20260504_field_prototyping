@@ -185,8 +185,11 @@ void haniwa_led_blink_red(int seconds) {
 
 ![I defeated the ghost!](images/20260509_I_defeated_the_ghost.jpg "I defeated the ghost!")
 
-Okay, now, the ghost is gone, and my energy efficiency is back on track!
+Okay, now, the ghost is gone, and my energy efficiency is back on track! Before we think about waterproofing, let's tidy up the breadboard a bit so that we can make effective use of the 8 pins of the Ethernet cable. Arrange them in a straight line from right to left in the following order: LED-Red, LED-COM, LED-Green, LED-Blue, Not-Used, SoilMoisture-GND, SoilMoisture-VCC, and SoilMoisture-Signal.
 
+![Circuitry on a breadboard arranged for use with an Ethernet cable.](images/20260509_arranged_breadboard.jpg "Circuitry on a breadboard arranged for use with an Ethernet cable.")
+
+![The ethernet extender has been connected.](images/20260509_ethernet_extender.jpg "The ethernet extender has been connected.")
 
 ---
 ---
