@@ -97,7 +97,7 @@ Before closing the boxes, I used a multimeter in resistance mode to map the pino
 ![Wires were placed like a mirror, the tester needle tilted sharply to the right, confirming continuity.](images/20260508_mirror.jpg "Wires were placed like a mirror, the tester needle tilted sharply to the right, confirming continuity.")
 
 **One Critical Warning: Straight vs. Crossover**
-While rare nowadays, "Crossover" Ethernet cables still exist in the wild. Unlike standard "Straight-through" cables, the internal pairs in a crossover cable are swapped.
+While rare nowadays, "Crossover" Ethernet cables still exist in the world. Unlike standard "Straight-through" cables, the internal pairs in a crossover cable are swapped.
 
 I strongly recommend using a standard Straight-through cable. If you must use a crossover cable, be extremely careful; you will need to re-verify every single pin with a tester and adjust your component wiring accordingly. One wrong connection here, and your sensors are gone!
 
@@ -125,7 +125,67 @@ void turn_off_all_leds(void) {
 
 Take a look at the movie below — seeing the RGB colors shine with "reversed" logic felt like a celebration! Sorry, but I was so excited. It's fun to get into a new sense of things. Please be careful not to get motion sickness while watching, my hands are shaking as I hold the camera, indicating I'm just so happy.
 
-![The anode-common RGB LED gently blinked, celebrating our colorful era](images/20260509_RGB_LED "The anode-common RGB LED gently blinked, celebrating our colorful era")
+![The anode-common RGB LED gently blinked, celebrating our colorful era](images/20260509_RGB_LED.mp4 "The anode-common RGB LED gently blinked, celebrating our colorful era")
+
+**The Problem: A Tiny "Ghost" in the Circuit**
+The joy was short-lived. Even when the LEDs were supposed to be OFF, I noticed they were faintly glowing in the dark. A "Ghost" had appeared!
+
+![Even when the LEDs were supposed to be OFF, I noticed they were faintly glowing](images/20260509_ghost.jpg "Even when the LEDs were supposed to be OFF, I noticed they were faintly glowing.")
+
+After a closer look, I realized there was a tiny potential difference between the 3.3V power rail and the GPIO pins. This small leak was enough to light up my high-efficiency RGB LED. Since I've carefully calculated my power budget to run this system for weeks on a single charge, this "energy leak" was unacceptable.
+
+**The Solution: High-Side Switching**
+I recalled a technique I used before: using a GPIO pin as a power source only when needed to save energy. This is known as High-Side Switching, and it’s a standard practice even among experts.
+
+**The Implementation**
+First — safety first — I unplugged the Pico. Then, I moved the jumper wire from Pin36 (3V3) to Pin22 (GP17).
+
+I updated the code to control the power flow:
+ - Keep GP17 LOW by default to completely cut off the power to the LED's anode.
+ - Set GP17 to HIGH only when I need to blink the LEDs.
+ - Since LEDs don't allow current to flow in reverse, keeping GP17 at 0V safely "locks" the circuit.
+
+The code is like this:
+``` c++
+// Define pin numbers depending on your microcontroller board
+const uint LED_SOURCE  = 17;
+const uint LED_RED     = 13;
+const uint LED_GREEN   = 14;
+const uint LED_BLUE    = 15;
+
+// Make a function to turn off all LEDs
+void turn_off_all_leds(void) {
+    gpio_put(LED_SOURCE, 0);
+    gpio_put(LED_RED, 1);
+    gpio_put(LED_GREEN, 1);
+    gpio_put(LED_BLUE, 1);
+}
+
+// Make a function to ready all LEDs
+void ready_all_leds(void) {
+    gpio_put(LED_SOURCE, 1);
+    sleep_ms(20);
+}
+
+// Use above functions in controlling LEDs
+void haniwa_led_blink_red(int seconds) {
+    // Call "ready" at first
+    ready_all_leds();
+    for (int i = 0; i < seconds; i++) {
+        gpio_put(LED_RED, 0);
+        sleep_ms(500);
+        gpio_put(LED_RED, 1);
+        sleep_ms(500);
+        watchdog_update();
+    }
+    // Call "turn-off" immediately after use to save energy
+    turn_off_all_leds();
+}
+```
+
+![I defeated the ghost!](images/20260509_I_defeated_the_ghost.jpg "I defeated the ghost!")
+
+Okay, now, the ghost is gone, and my energy efficiency is back on track!
 
 
 ---
