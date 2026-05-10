@@ -191,15 +191,55 @@ Okay, now, the ghost is gone, and my energy efficiency is back on track! Before 
 
 ![The ethernet extender has been connected.](images/20260509_ethernet_extender.jpg "The ethernet extender has been connected.")
 
+Back in my university days, when I built my own PCs, I had some leftover parts tucked away in a drawer. Let's see if I can find anything useful. I dug out some jack-to-pin jumper wires. There are exactly four of them: red, black, green, and blue. Great, this means I don't have to solder the four wires for the RGB LED. I'm not going to say "I mustn't run away," (even I'm called as "Shinji-kun.") You don't have to ride something you don't want to ride. I'll run away from soldering as far as it takes. I wasn't taught that kind of such an advanced skill, by my father.
+
+![Connect the four jumper wires, bundled together with heat shrink tubing, to the LED.](images/20260509_hotmelt_connector.jpg "Connect the four jumper wires, bundled together with heat shrink tubing, to the LED.")
+![The LED connected to the bundled jumper wires glows green.](images/20260509_hotmelt_green.jpg "The LED connected to the bundled jumper wires glows green.")
+
+Looks like we've managed to escape. No pursuers can come now. Okay, while we have the chance, let's build a waterproof enclosure.
+
+![Materials for the main enclosure: plastic case, diatomaceous earth ring, and fruit sponge.](images/20260510_materials_for_main_box.jpg "Materials for the main enclosure: plastic case, diatomaceous earth ring, and fruit sponge.")
+![The main enclosure](images/20260510_main_enclosure.jpg "The main enclosure")
+
+Fossilized clumps of soil containing life from 10 million years ago will protect the latest Pico from its greatest enemy: moisture.
+
+Let's drill two holes for the cable exit. Now, I have something very important to tell all you DIY beginners: Always wear cut-resistant gloves when using drills or utility knives. If you don't have any on hand, stop working, absolutely stop. It might be unavoidable to get a small injury, but you absolutely must not get a serious injury that can be prevented. There is no development work in this world that you have to do at the risk of a lifelong injury, and there shouldn't be.
+
+I still remember clearly that at the factory where I first worked, utility knives were completely banned. Because all the senior workers were getting injured so often, one of the executives, at his wit's end, banned the knives themselves from the company. I think it was a difficult decision, and some people probably mocked it. But thanks to that, I never got seriously injured during my seven years there. That says it all, and I don't think I've said anything more. At the time, I didn't fully understand the seriousness of the situation, but now I'm very grateful.
+
+To protect against rain coming from above, I'll cut a horizontal hole just below the lid that's the perfect size for the cable. This way, the lid itself will act as a roof, allowing the water to drain down. Once I can secure the cable and close the lid, it's finished.
+
+![The main enclosure completed.](images/20260510_main_box_completed.jpg "The main enclosure completed.")
+
+Let's finish waterproofing the satellite box.
+
+For this kind of low-cost waterproofing, the kitchenware section of a 100-yen shop is very useful. I bought some small Tupperware containers; four for 100 yen. In this era of a weak yen, this price is a steal.
+
+Imagine the actual receiver, place it against the mounting surface, make three cuts, and seal it with bathroom sealant. Waterproof any exposed wiring around the equipment with heat shrink tubing.
+
+![Tupperware containers](images/20260510_case_for_sub.jpg "Tupperware containers")
+![Imaging for the satellite box](images/20260510_satellite_image.jpg "Imaging for the satellite box")
+![Cut three Interfaces for cables](images/20260510_cut_three_IO.jpg "Cut three Interfaces for cables")
+![The satellite completed](images/20260510_satellite_completed.jpg "The satellite completed")
+
+**Haniwa chef's hat**
+I bought a self standing funnel, and make it to a hat for my Haniwa.
+
+![The standing funnel](images/20260510_self_standing_funnel.jpg "The standing funnel")
+![Make a hole to fit the hat of haniwa.](images/20260510_make_a_hole_to_fit_the_hat_of_haniwa.jpg "Make a hole to fit the hat of haniwa.")
+![Haniwa_with_the_extra_hat.](images/20260510_haniwa_with_the_extra_hat.jpg "Haniwa_with_the_extra_hat.")
+![Haniwa_wears_a_chefs_hat](images/20260510_haniwa_wears_chefs_hat.jpg "Haniwa_wears_a_chefs_hat")
+
+
 ---
 ---
 
 ### ---------------------TBC-------------------------
 
-- Using simple plastic cases, diatomaceous earth rings and my DIY techniques to shield circuitry from rain and salt-laden sea breezes.
-
 ## 3. Result: Haniwa Flash in my Garden
-- With a movie, when I come to the garden haniwa flashes its LEDs.
+When I come to the garden, haniwa flashes its LEDs. That's it, this project has been completed!
+
+![movie]
 
 ### ---------------------TBC-------------------------
 ---
