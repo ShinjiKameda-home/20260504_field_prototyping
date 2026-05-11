@@ -5,7 +5,7 @@ Living in Hayama on the Miura Peninsula of the Japanese archipelago, I am consta
 
 The incredibly warm winter sunlight that softens the harsh winds, the fierce spring gales that sweep through the coast, the cooling sea breeze of summer carrying the scent of the tide, and the ginkgo trees dancing in the autumn wind, each turning yellow at its own unique pace. I feel a deep sense of gratitude to live in an environment where nature's presence is so profoundly felt.
 
-For me, the wind — whenever and wherever it blows — traces back to my childhood. Every night before bed, I loved listening to the rustling of leaves in the night breeze. It was the sound by a large poplar tree planted by my grandmother to commemorate my birth. In Japan, the poplar trees of Biei Town in Hokkaido are famous. (https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%97%E3%83%A9) If you felt something strange, your instincts are correct. As you know, the poplar becomes too big to be in a small residential area in Japan. My mother never said so, however, I'm thinking she perhaps knew it but deliberately chose it.
+For me, the wind — whenever and wherever it blows — traces back to my childhood. Every night before bed, I loved listening to the rustling of leaves in the night breeze. It was the sound of a large poplar tree planted by my grandmother to commemorate my birth. In Japan, the poplar trees of Biei Town in Hokkaido are famous. (https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%97%E3%83%A9) If you felt something strange, your instincts are correct. As you know, the poplar becomes too big to be in a small residential area in Japan. My mother never said so, however, I'm thinking she perhaps knew it but deliberately chose it.
 
 Because, my grandmother was a resilient woman who met my grandfather at "Manchuria", a land stretching to the horizon endlessly in Northeast China, during WWII. Just after the war (yes, the war should have ended), she was a rare survivor who escaped the overwhelming Soviet persistent offensive robbing and narrowly returned to Japan. In our small but safe residential area in Southern Osaka Prefecture, that poplar grew unnaturally tall, surpassing our living house by the time I was 17. Because it became a lightning hazard, we eventually had to cut it down.
 
@@ -102,7 +102,7 @@ While rare nowadays, "Crossover" Ethernet cables still exist in the world. Unlik
 I strongly recommend using a standard Straight-through cable. If you must use a crossover cable, be extremely careful; you will need to re-verify every single pin with a tester and adjust your component wiring accordingly. One wrong connection here, and your sensors are gone!
 
 **Switching to Common Anode: Embracing "Active Low" Logic**
-In this step, I made a small but significant change to the circuit: switching from a Common Cathode to a Common Anode RGB LED to use simple one LED. While it might seem counter-intuitive at first for mechanicla engineers such as me, understanding this is a vital "rite of passage" for any electronics hobbyist.
+In this step, I made a small but significant change to the circuit: switching from a Common Cathode to a Common Anode RGB LED to use simple one LED. While it might seem counter-intuitive at first for mechanical engineers like myself, understanding this is a vital "rite of passage" for any electronics hobbyist.
 
 **The Wiring Change:**
 Instead of connecting the longest pin (Common) to GND (Pin18), I connected it to the 3.3V pin (Pin36) of the Pi Pico 2W. The Red, Green, and Blue pins are still connected to the GPIOs via resistors.
@@ -196,7 +196,7 @@ Back in my university days, when I built my own PCs, I had some leftover parts t
 ![Connect the four jumper wires, bundled together with heat shrink tubing, to the LED.](images/20260509_hotmelt_connector.jpg "Connect the four jumper wires, bundled together with heat shrink tubing, to the LED.")
 ![The LED connected to the bundled jumper wires glows green.](images/20260509_hotmelt_green.jpg "The LED connected to the bundled jumper wires glows green.")
 
-Looks like we've managed to escape. No pursuers can come now. Okay, while we have the chance, let's build a waterproof enclosure.
+Looks like we've managed to escape. No pursuers can catch me now. Okay, while we have the chance, let's build a waterproof enclosure.
 
 ![Materials for the main enclosure: plastic case, diatomaceous earth ring, and fruit sponge.](images/20260510_materials_for_main_box.jpg "Materials for the main enclosure: plastic case, diatomaceous earth ring, and fruit sponge.")
 ![The main enclosure](images/20260510_main_enclosure.jpg "The main enclosure")
@@ -222,28 +222,25 @@ Imagine the actual receiver, place it against the mounting surface, make three c
 ![Cut three Interfaces for cables](images/20260510_cut_three_IO.jpg "Cut three Interfaces for cables")
 ![The satellite completed](images/20260510_satellite_completed.jpg "The satellite completed")
 
-**Haniwa chef's hat**
-I bought a self standing funnel, and make it to a hat for my Haniwa.
+**Haniwa's chef's hat:**
+I bought a self standing funnel, and make it to a hat for my Haniwa. Look, Haniwa-san looks like he's become a head chef.
 
 ![The standing funnel](images/20260510_self_standing_funnel.jpg "The standing funnel")
-![Make a hole to fit the hat of haniwa.](images/20260510_make_a_hole_to_fit_the_hat_of_haniwa.jpg "Make a hole to fit the hat of haniwa.")
-![Haniwa_with_the_extra_hat.](images/20260510_haniwa_with_the_extra_hat.jpg "Haniwa_with_the_extra_hat.")
-![Haniwa_wears_a_chefs_hat](images/20260510_haniwa_wears_chefs_hat.jpg "Haniwa_wears_a_chefs_hat")
+![Make a hole to fit the hat of the Haniwa.](images/20260510_make_a_hole_to_fit_the_hat_of_haniwa.jpg "Make a hole to fit the hat of the Haniwa.")
+![The Haniwa with the extra hat](images/20260510_haniwa_with_the_extra_hat.jpg "The Haniwa with the extra hat.")
+![The Haniwa guardian wears a chef's hat.](images/20260510_haniwa_wears_chefs_hat.jpg "The Haniwa guardian wears a chef's hat.")
 
+I went back to my room, wrapped heat-shrink tubing around the exposed contacts, sealed them with a lighter, and I glued thickly as "Bote-Bote" the soil moisture meter circuit with a glue gun. Now the Region-free Field-usable Off-grid Sensing Scarecrow System, made exclusively for the Haniwa Guardian, is complete. 
 
----
----
+![All the components have been waterproofed](images/20260511_all_components.jpg "All the components have been waterproofed")
 
-### ---------------------TBC-------------------------
+So then, how should I let haniwa equip it? Come to think of it, I vaguely remember my grandmother tying her kimono sleeves using one string (we call it "Tasuki-gake") before she was cooking, cleaning or something needs to move quickly, so the hanging sleeves wouldn't get in the way. I'll attach the satellite box to Haniwa Guardian's back and secure it with one hemp string tied like "Tasuki-gake". That's a true Japanese solution!
 
-## 3. Result: Haniwa Flash in my Garden
-When I come to the garden, haniwa flashes its LEDs. That's it, this project has been completed!
+**Evolving HANIWA**
+Haniwa Irrigatable Scarecrow has evolved into "Shin Haniwa Guardian", equipped with new gears.
 
-![movie]
-
-### ---------------------TBC-------------------------
----
----
+![Shin Haniwa Guardian](images/20260511_haniwa_with_the_new_equipment.jpg "Shin Haniwa Guardian")
+![The backpack on the Haniwa](images/20260511_backpack_on_haniwa.jpg "The backpack on the Haniwa")
 
 ## Conclusions
 This project is dedicated to my grandmother, who passed away last winter.
@@ -264,7 +261,7 @@ Just recently, I helped my daughter with her junior high school homework involvi
 
 In this era of rapidly advancing AI, we cannot survive by simply passing on what we were taught. Sometimes, we must find a way to teach the new things we discovered ourselves — the things no adult ever told us.
 
-However, perhaps — and I want to send a message of encouragement to all the highly-educated, white-collar workers who, like myself, may feel on the brink of despair jobs were taken by AI — it is only in such a real changing world that we get a chance to truly discover and express our unique skills and individual personalities uninterrupted by anyone's shallow words. Let’s continue to play this adventure game called the life.
+However, perhaps — and I want to send a message of encouragement to all the highly-educated, white-collar workers who, like myself, may feel on the brink of despair jobs were taken by AI — it is only in such a real changing world that we get a chance to truly discover and express our unique skills and individual personalities uninterrupted by anyone's shallow words. Let’s continue to play this adventure game called life.
 
 With deepest gratitude to my grandmother, who survived the bitter, dry cold of the continent and is now reading this from heaven.
 
@@ -272,4 +269,4 @@ With deepest gratitude to my grandmother, who survived the bitter, dry cold of t
  - Personal Project: I do NOT recommend getting injured. This project is a personal hobby and technical experiment. It is not affiliated with, sponsored by, or endorsed by any of the organizations mentioned.
  - Accuracy & Responsibility: While I strive for technical and historical accuracy, I assume no responsibility for any issues or damages arising from the use of the information in this article. Everything is done at your own risk. 
  - Battery Safety: This project involves the use of aged lithium-ion batteries. Please be aware that old batteries may pose risks of swelling or fire; handle them with extreme caution and monitor their condition regularly.
- - Handle with Care: Always use drills and utility knives properly to avoid injury. Most importantly, handle your soldering iron with extreme caution to prevent fires or burns.
+ - Handle with Care: I do NOT recommend getting injured. Always wear cut-resistant gloves when you use drills and utility knives to avoid injury. Most importantly, handle your soldering iron with extreme caution to prevent fires or burns. As I did, consider avoiding soldering altogether as an option.
