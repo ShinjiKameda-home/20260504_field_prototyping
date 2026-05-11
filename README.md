@@ -21,6 +21,9 @@ The code is written in C++ using the Raspberry Pi Pico SDK. It features a modula
  - haniwa_monitor.cpp: Sensor data acquisition and LED signaling (Active Low / High-Side Switching).
  - haniwa_connector.cpp: Wi-Fi connectivity and communication with the HomeServer.
 
+ You can see another repository here:
+ https://github.com/ShinjiKameda-home/haniwa-hybrid.git
+
 **Power Saving Configuration**
 
 ``` C++
