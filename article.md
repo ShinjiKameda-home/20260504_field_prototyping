@@ -242,6 +242,42 @@ Haniwa Irrigatable Scarecrow has evolved into "Shin Haniwa Guardian", equipped w
 ![Shin Haniwa Guardian](images/20260511_haniwa_with_the_new_equipment.jpg "Shin Haniwa Guardian")
 ![The backpack on the Haniwa](images/20260511_backpack_on_haniwa.jpg "The backpack on the Haniwa")
 
+
+------------------------TBC---------------------------
+
+## 3. Troubleshooting: Preventing Continuous Reboots Caused by Instantaneous Power Glitches
+
+When combining a solar panel with a mobile battery (pass-through charging), a notorious problem often occurs: a brief power drop (glitch) during the transition when the solar input cuts out and the battery switches to standalone discharge mode. Even though this lag lasts only a few hundred milliseconds (so I overlooked it during the LED Bottle Lantern test), it is long enough to cause the Raspberry Pi Pico 2W to brown out and reboot. Please look at this movie:
+
+![before](movie "")
+
+In short, the solution is very simple. To solve this and achieve the "Immortal Haniwa" that survives these switching glitches, you can simply add a 5.5V Supercapacitor between Pin 40 (VBUS) and Pin 38 (GND).
+
+**Why No External Diode is Needed:**
+You might think an external reverse-current protection diode is required to prevent the capacitor from discharging back into the power bank. However, thanks to the smart hardware design of the Raspberry Pi Pico 2W, it is not needed. The board already features an onboard Schottky barrier diode (D1) that inherently blocks the reverse current from VBUS back into the microUSB source. 
+
+Therefore, all you need to do is to connect the supercapacitor in parallel directly to the pins: Positive (+) to Pin 40 (VBUS), and Negative (-) to Pin 38 (GND).
+
+**Note:** Double-check the polarity before powering on, as supercapacitors are polarized components.
+
+**Sizing the Capacitor:** How much capacity do we actually need to survive a typically larger 0.5-second (500ms) glitch? We can determine the required capacitance ($C$) using the following formula:
+$$C = \frac{I \times t}{\Delta V}$$
+Where, $I$ is the estimated base current of Pico 2W during its sleep interval -> $\approx 40 \text{ mA } (0.04 \text{ A})$, $t$ is the glitch duration to survive -> $0.5 \text{ seconds}$, $\Delta V$ is the allowable voltage drop from $5.0V$ down to the regulator threshold of 4.0V -> $1.0 \text{ V}$. i.e.,
+$$C = \frac{0.04 \text{ A} \times 0.5 \text{ s}}{1.0 \text{ V}} = 0.02 \text{ F } (20,000 \ \mu\text{F})$$
+
+While a standard $20,000 \ \mu\text{F}$ electrolytic capacitor would be physically massive and impractical for a compact prototype box, a coin-sized 0.22F (220,000 µF) Supercapacitor is readily available and compact. Choosing a 0.22F capacitor provides more than 10 times the required buffer, keeping the Pico 2W alive for several seconds during power fluctuations. While a 1.0F capacitor is also an option, it introduces unnecessary inrush current and startup delays. **Don't fill a massive swimming pool when a reliable bucket is all you need.** The 0.22F capacity will be a sufficient, optimized, and elegant power-backup design.
+
+### A Warning on Polarity
+Supercapacitors are polarized components. I’ll be honest—over my years of tinkering, I’ve accidentally fried quite a few components by reversing the positive and negative leads. It’s an incredibly easy mistake to make, so double-check your wiring before you use a new component in the actual circuit environment.
+
+There are many ways to verify the polarity of your specific capacitor before plugging it into the breadboard (using a datasheet, testing with a multimeter, etc.). Take your time and find a method that works best for you.
+
+Got stuck or confused? Don't worry! If you’re staring at your components and wondering "Which way does this go?", just leave a comment or drop a question below. I’d be happy to help you figure it out so you don't have to learn the hard way like I did.
+
+![after](movie "")
+
+------------------------TBC---------------------------
+
 ## Conclusions
 This project is dedicated to my grandmother, who passed away last winter.
 
