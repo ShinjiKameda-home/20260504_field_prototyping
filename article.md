@@ -242,9 +242,6 @@ Haniwa Irrigatable Scarecrow has evolved into "Shin Haniwa Guardian", equipped w
 ![Shin Haniwa Guardian](images/20260511_haniwa_with_the_new_equipment.jpg "Shin Haniwa Guardian")
 ![The backpack on the Haniwa](images/20260511_backpack_on_haniwa.jpg "The backpack on the Haniwa")
 
-
-------------------------TBC---------------------------
-
 ## 3. Troubleshooting: Preventing Continuous Reboots Caused by Instantaneous Power Glitches
 
 When combining a solar panel with a mobile battery (pass-through charging), a notorious problem often occurs: a brief power drop (glitch) during the transition when the solar input cuts out and the battery switches to standalone discharge mode. Even though this lag lasts only a few hundred milliseconds (so I overlooked it during the LED Bottle Lantern test), it is long enough to cause the Raspberry Pi Pico 2W to brown out and reboot. Please look at this movie:
@@ -257,6 +254,8 @@ In short, the solution is very simple. To solve this and achieve the "Immortal H
 You might think an external reverse-current protection diode is required to prevent the capacitor from discharging back into the power bank. However, thanks to the smart hardware design of the Raspberry Pi Pico 2W, it is not needed. The board already features an onboard Schottky barrier diode (D1) that inherently blocks the reverse current from VBUS back into the microUSB source. 
 
 Therefore, all you need to do is to connect the supercapacitor in parallel directly to the pins: Positive (+) to Pin 40 (VBUS), and Negative (-) to Pin 38 (GND).
+
+***My sincere apologies, everyone! I need to make a correction here. In the video, I showed that the system stays powered when the USB is unplugged, but the supercapacitor actually must be connected from Pin 39 (VSYS) to Pin 38 (GND). If you connect it to Pin 40 (VBUS) like I did, you won't be utilizing the Pico's built-in Schottky barrier diode, which is crucial for preventing reverse current during solar power transitions. Let's make sure to connect it to Pin 39 to make it truly resilient!***
 
 **Note:** Double-check the polarity before powering on, as supercapacitors are polarized components.
 
@@ -275,8 +274,6 @@ There are many ways to verify the polarity of your specific capacitor before plu
 Got stuck or confused? Don't worry! If you’re staring at your components and wondering "Which way does this go?", just leave a comment or drop a question below. I’d be happy to help you figure it out so you don't have to learn the hard way like I did.
 
 ![after](movie "")
-
-------------------------TBC---------------------------
 
 ## Conclusions
 This project is dedicated to my grandmother, who passed away last winter.
