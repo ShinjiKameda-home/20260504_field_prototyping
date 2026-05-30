@@ -28,7 +28,7 @@ The code is written in C++ using the Raspberry Pi Pico SDK. It features a modula
 
 ``` C++
 // CYW43 Power Management for "Doze" mode (~20mA)
-cyw43_wifi_pm(&cyw43_state, cyw43_pm_value(CYW43_PM2_POWERSAVE_MODE, 200, 1, 1, 5));
+cyw43_wifi_pm(&cyw43_state, cyw43_pm_value(CYW43_PM2_POWERSAVE_MODE, 200, 1, 1, 10));
 ```
 
 **How to Build**
