@@ -291,7 +291,7 @@ Fortunately, I received a so-called "good education" and landed some jobs at so-
 
 As I gaze at the pale blue LED light emitted by the Haniwa, I can't help but ask this question:
 
-Are the unique ideas and know-how that you developers have cultivated through your daily efforts should be simply traded individually and should be used as tools for corporations to monopolize and reap economic profit?
+Are the unique ideas and know-how that you developers have cultivated through your daily efforts should be simply traded individually and should be used as tools for corporations to monopolize and reap economic profit? Is that all?
 
 For example, wouldn't their true value be realized and become a beacon of hope illuminating this darkness, only if they were passed down from generation to generation in the form of open-source software that enables integration with other technologies beyond organizational boundaries?
 
