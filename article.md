@@ -213,9 +213,7 @@ To protect against rain coming from above, I'll cut a horizontal hole just below
 
 Let's finish waterproofing the satellite box.
 
-For this kind of low-cost waterproofing, the kitchenware section of a 100-yen shop is very useful. I bought some small Tupperware containers; four for 100 yen. In this era of a weak yen, this price is a steal.
-
-Imagine the actual receiver, place it against the mounting surface, make three cuts, and seal it with bathroom sealant. Waterproof any exposed wiring around the equipment with heat shrink tubing.
+For this kind of low-cost waterproofing, the kitchenware section of a 100-yen shop is very useful. I bought some small Tupperware containers; four for 100 yen. Imagine the actual receiver, place it against the mounting surface, make three cuts, and seal it with bathroom sealant. Waterproof any exposed wiring around the equipment with heat shrink tubing.
 
 ![Tupperware containers](images/20260510_case_for_sub.jpg "Tupperware containers")
 ![Imaging for the satellite box](images/20260510_satellite_image.jpg "Imaging for the satellite box")
@@ -309,7 +307,7 @@ I remember a moment from my university days while learning nano-plating. The tea
 
 It was the same as always; with a forced, awkward smile, I said, "I’m sorry, but I don't have a father, as you know, right?"
 
-After that, he fell silent and stopped teaching me altogether. I never thought simply he was a bad person; it was an era where adults usually left behind children who didn't perform well. Looking back, my retort was childish, too.
+After that, he fell silent and stopped teaching me altogether. I never thought simply he was a bad person. That's how it goes, it was an era where adults usually left behind children who didn't perform well. Looking back, my retort was childish, too.
 
 But it’s okay, no problem, I hold no grudges. Even before I was born, I think my father taught me just one thing that hating someone changes nothing. I had my grandmother, who raised me up to be bigger than a house, and I have my mother, who nurtured my ability to put experiences into words like these. My childhood was more than luxurious enough.
 
